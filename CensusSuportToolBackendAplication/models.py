@@ -7,8 +7,8 @@ class User(models.Model):
     # Otros campos de usuario según sea necesario
 
 class Community(models.Model):
-    CommunityId = models.AutoField(primary_key=True)
-    AdminId = models.ForeignKey('CommunityAdmin', on_delete=models.CASCADE)
+    CommunityId = models.AutoField(primary_key=True, default=1)
+    AdminId = models.ForeignKey('CommunityAdmin', on_delete=models.CASCADE, null=True)
     # Otros campos de Community
 
 class CommunityAdmin(models.Model):
@@ -22,8 +22,8 @@ class Volunteer(models.Model):
     # Otros campos de Volunteer según sea necesario
 
 class Form(models.Model):
-    title = models.CharField(max_length=100)
-    volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, default='')
+    volunteer = models.ForeignKey(Volunteer, on_delete=models.CASCADE, null=True)
     # Otros campos de Form
 
 class MemberSchema(models.Model):
@@ -53,8 +53,8 @@ class Value(models.Model):
     # Otros campos de Value
 
 class Question(models.Model):
-    title = models.CharField(max_length=255)
-    hint = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, default='')
+    hint = models.CharField(max_length=255, default='')
     TYPE_CHOICES = [
         ('numeric', 'Numeric'),
         ('text', 'Text'),
@@ -62,7 +62,7 @@ class Question(models.Model):
         ('boolean', 'Boolean'),
     ]
     type = models.CharField(max_length=10, choices=TYPE_CHOICES)
-    form = models.ForeignKey(Form, on_delete=models.CASCADE)
+    form = models.ForeignKey(Form, on_delete=models.CASCADE, default=1)
     # Otros campos de Question
 
 class Option(models.Model):
