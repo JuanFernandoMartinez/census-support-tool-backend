@@ -27,7 +27,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY',default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
 
 REDNDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOST')
 
@@ -135,3 +134,5 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ALLOWED_HOSTS = ['census-support-tool-backend.onrender.com', 'localhost', '127.0.0.1']
