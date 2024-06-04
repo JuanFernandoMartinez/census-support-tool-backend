@@ -21,5 +21,5 @@ from CensusSuportToolBackendAplication.urls import router as app_router
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Incluir las rutas de la aplicación
-    path('api/', include(app_router.urls)),
+    path('', include(app_router.urls)),
 ]
