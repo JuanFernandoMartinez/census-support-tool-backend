@@ -1,6 +1,7 @@
 from rest_framework.routers import DefaultRouter
 
 from CensusSuportToolBackendAplication.api import CommunityAdminViewSet, CommunityViewSet, FieldViewSet, FormViewSet, MemberSchemaViewSet, OptionViewSet, QuestionViewSet, SchemaFieldViewSet, UserViewSet, ValueViewSet, VolunteerViewSet
+from CensusSuportToolBackendAplication.views import SaludoViewSet
 
  
 router = DefaultRouter()
@@ -15,6 +16,7 @@ router.register(r'schema-fields', SchemaFieldViewSet, basename='schema-field')
 router.register(r'values', ValueViewSet, basename='value')
 router.register(r'questions', QuestionViewSet, basename='question')
 router.register(r'options', OptionViewSet, basename='option')
+router.register(r'saludo', SaludoViewSet, basename='saludo')
 
 # Ensure you export the router
 __all__ = ['router']
