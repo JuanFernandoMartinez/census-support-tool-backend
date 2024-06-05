@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'CensusSuportToolBackendAplication',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
